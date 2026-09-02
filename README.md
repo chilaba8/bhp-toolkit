@@ -85,6 +85,19 @@ bhp-udp-client 127.0.0.1 9997 -d "AAABBBCCC"
 bhp-udp-client 10.0.0.5 161 -f payload.bin --raw
 ```
 
+### `bhp-tcp-server` — Servidor TCP multihilo generico
+
+Para probar los clientes de arriba, montar un listener rapido en un
+laboratorio o servir de base a herramientas mas complejas (proxy, shell).
+
+```bash
+# Servidor de eco en el puerto 9998
+bhp-tcp-server -p 9998 -m echo
+
+# Servidor que solo confirma recepcion con ACK, una sola conexion
+bhp-tcp-server -p 9998 -m ack --once
+```
+
 ## Roadmap
 
 - [x] Ejecucion de comandos remotos via SSH
@@ -92,6 +105,7 @@ bhp-udp-client 10.0.0.5 161 -f payload.bin --raw
 - [x] Tunel SSH inverso
 - [x] Cliente TCP generico
 - [x] Cliente UDP generico
+- [x] Servidor TCP multihilo generico
 - [ ] Sockets sin procesar / sniffer de red
 - [ ] Escaner de descubrimiento de hosts
 
