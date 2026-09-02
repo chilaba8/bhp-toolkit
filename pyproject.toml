@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bhp-toolkit"
+version = "0.1.0"
+description = "Herramientas de red para auditorias de seguridad, construidas siguiendo Black Hat Python"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    "paramiko>=3.0",
+]
+
+[project.scripts]
+bhp-ssh-exec = "bhp_toolkit.ssh.exec_client:main"
+bhp-ssh-forward = "bhp_toolkit.ssh.forward:main"
+bhp-ssh-rforward = "bhp_toolkit.ssh.rforward:main"
+
+[tool.setuptools.packages.find]
+include = ["bhp_toolkit*"]
