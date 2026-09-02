@@ -58,11 +58,29 @@ host/puerto accesible desde el objetivo.
 bhp-ssh-rforward 192.168.1.203 -u tim --ask-pass -r 8081 -d 192.168.1.207:3000
 ```
 
+### `bhp-tcp-client` — Cliente TCP generico
+
+Para probar servicios, hacer banner grabbing, enviar payloads de fuzzing o
+hablar con protocolos a mano cuando no hay herramientas de red disponibles en
+el entorno.
+
+```bash
+# Peticion HTTP simple
+bhp-tcp-client www.example.com 80 -d "GET / HTTP/1.1\r\nHost: example.com\r\n\r\n"
+
+# Enviar un payload binario desde un archivo (fuzzing) y ver la respuesta en crudo
+bhp-tcp-client 10.0.0.5 9000 -f payload.bin --raw
+
+# Solo escuchar lo que el servicio envia al conectar (banner grabbing)
+bhp-tcp-client 10.0.0.5 21 --no-send
+```
+
 ## Roadmap
 
 - [x] Ejecucion de comandos remotos via SSH
 - [x] Tunel SSH de reenvio local
 - [x] Tunel SSH inverso
+- [x] Cliente TCP generico
 - [ ] Sockets sin procesar / sniffer de red
 - [ ] Escaner de descubrimiento de hosts
 
