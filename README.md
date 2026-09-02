@@ -140,6 +140,26 @@ bhp-tcp-proxy 127.0.0.1 9000 10.0.0.5 21
 bhp-tcp-proxy 127.0.0.1 9000 10.0.0.5 21 --receive-first
 ```
 
+### `bhp-sniffer` — Sniffer con sockets sin procesar
+
+Decodifica en vivo las cabeceras IP (y, si aplica, ICMP) de todo el trafico
+visible en una interfaz. Requiere privilegios de root (crea un `SOCK_RAW`).
+
+```bash
+sudo bhp-sniffer -H 0.0.0.0
+```
+
+### `bhp-host-discovery` — Escaner de descubrimiento de hosts por UDP
+
+Envia datagramas UDP con una firma propia a un puerto cerrado en toda una
+subred y escucha las respuestas ICMP "puerto inalcanzable" para deducir que
+hosts estan vivos, sin necesidad de un escaneo de puertos completo. Tambien
+requiere privilegios de root.
+
+```bash
+sudo bhp-host-discovery 192.168.1.0/24
+```
+
 ## Roadmap
 
 - [x] Ejecucion de comandos remotos via SSH
@@ -150,8 +170,8 @@ bhp-tcp-proxy 127.0.0.1 9000 10.0.0.5 21 --receive-first
 - [x] Servidor TCP multihilo generico
 - [x] Sustituto de Netcat (shell, upload, execute)
 - [x] Proxy TCP con hexdump
-- [ ] Sockets sin procesar / sniffer de red
-- [ ] Escaner de descubrimiento de hosts
+- [x] Sockets sin procesar / sniffer de red
+- [x] Escaner de descubrimiento de hosts
 
 ## Referencia
 

@@ -22,6 +22,8 @@ bhp-udp-client = "bhp_toolkit.net.udp_client:main"
 bhp-tcp-server = "bhp_toolkit.net.tcp_server:main"
 bhp-netcat = "bhp_toolkit.net.netcat:main"
 bhp-tcp-proxy = "bhp_toolkit.net.tcp_proxy:main"
+bhp-sniffer = "bhp_toolkit.raw.sniffer:main"
+bhp-host-discovery = "bhp_toolkit.raw.host_discovery:main"
 
 [tool.setuptools.packages.find]
 include = ["bhp_toolkit*"]
