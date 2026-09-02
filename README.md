@@ -75,12 +75,23 @@ bhp-tcp-client 10.0.0.5 9000 -f payload.bin --raw
 bhp-tcp-client 10.0.0.5 21 --no-send
 ```
 
+### `bhp-udp-client` — Cliente UDP generico
+
+Igual que `bhp-tcp-client` pero sin conexion previa (`sendto`/`recvfrom`),
+para probar servicios UDP (DNS, SNMP, servicios propietarios, etc.).
+
+```bash
+bhp-udp-client 127.0.0.1 9997 -d "AAABBBCCC"
+bhp-udp-client 10.0.0.5 161 -f payload.bin --raw
+```
+
 ## Roadmap
 
 - [x] Ejecucion de comandos remotos via SSH
 - [x] Tunel SSH de reenvio local
 - [x] Tunel SSH inverso
 - [x] Cliente TCP generico
+- [x] Cliente UDP generico
 - [ ] Sockets sin procesar / sniffer de red
 - [ ] Escaner de descubrimiento de hosts
 
