@@ -98,6 +98,32 @@ bhp-tcp-server -p 9998 -m echo
 bhp-tcp-server -p 9998 -m ack --once
 ```
 
+### `bhp-netcat` — Sustituto minimalista de Netcat
+
+Listener/cliente TCP para sistemas donde no hay `nc` pero si Python: subir
+archivos, ejecutar un comando puntual o dejar un shell de comandos
+interactivo compatible con el propio Netcat (usa `\n` como separador, asi
+que puedes hablarle con `nc` normal desde el otro lado).
+
+**Aviso:** el modo `-c` deja un shell de comandos remoto sin autenticacion.
+Usalo solo en laboratorios propios o en el post-explotacion de un engagement
+autorizado, nunca expuesto a redes que no controlas.
+
+```bash
+# Shell de comandos remoto
+bhp-netcat -t 192.168.1.203 -p 5555 -l -c
+bhp-netcat -t 192.168.1.203 -p 5555          # cliente, Ctrl-D para enviar stdin
+
+# Ejecutar un unico comando y devolver la salida
+bhp-netcat -t 192.168.1.203 -p 5555 -l -e "cat /etc/passwd"
+
+# Subir un archivo al listener
+bhp-netcat -t 192.168.1.203 -p 5555 -l -u recibido.txt
+
+# Hablar con cualquier servicio TCP, a la antigua usanza
+echo -ne "GET / HTTP/1.1\r\nHost: example.com\r\n\r\n" | bhp-netcat -t example.com -p 80
+```
+
 ## Roadmap
 
 - [x] Ejecucion de comandos remotos via SSH
@@ -106,6 +132,7 @@ bhp-tcp-server -p 9998 -m ack --once
 - [x] Cliente TCP generico
 - [x] Cliente UDP generico
 - [x] Servidor TCP multihilo generico
+- [x] Sustituto de Netcat (shell, upload, execute)
 - [ ] Sockets sin procesar / sniffer de red
 - [ ] Escaner de descubrimiento de hosts
 
