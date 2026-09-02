@@ -17,6 +17,7 @@ dependencies = [
 bhp-ssh-exec = "bhp_toolkit.ssh.exec_client:main"
 bhp-ssh-forward = "bhp_toolkit.ssh.forward:main"
 bhp-ssh-rforward = "bhp_toolkit.ssh.rforward:main"
+bhp-tcp-client = "bhp_toolkit.net.tcp_client:main"
 
 [tool.setuptools.packages.find]
 include = ["bhp_toolkit*"]
