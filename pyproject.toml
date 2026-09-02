@@ -20,6 +20,7 @@ bhp-ssh-rforward = "bhp_toolkit.ssh.rforward:main"
 bhp-tcp-client = "bhp_toolkit.net.tcp_client:main"
 bhp-udp-client = "bhp_toolkit.net.udp_client:main"
 bhp-tcp-server = "bhp_toolkit.net.tcp_server:main"
+bhp-netcat = "bhp_toolkit.net.netcat:main"
 
 [tool.setuptools.packages.find]
 include = ["bhp_toolkit*"]
