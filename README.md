@@ -124,6 +124,22 @@ bhp-netcat -t 192.168.1.203 -p 5555 -l -u recibido.txt
 echo -ne "GET / HTTP/1.1\r\nHost: example.com\r\n\r\n" | bhp-netcat -t example.com -p 80
 ```
 
+### `bhp-tcp-proxy` — Proxy TCP con hexdump
+
+Se interpone entre un cliente y un servicio remoto, mostrando en hexdump
+todo el trafico en ambas direcciones. Util para entender protocolos
+desconocidos, capturar credenciales en texto plano o preparar un fuzzer,
+en entornos donde no puedes usar Wireshark. `request_handler` y
+`response_handler` son los puntos donde modificar el trafico al vuelo.
+
+```bash
+# Todo lo que llegue a 127.0.0.1:9000 se reenvia a 10.0.0.5:21, mostrando hexdump
+bhp-tcp-proxy 127.0.0.1 9000 10.0.0.5 21
+
+# Servicios que hablan primero (banners FTP/SMTP)
+bhp-tcp-proxy 127.0.0.1 9000 10.0.0.5 21 --receive-first
+```
+
 ## Roadmap
 
 - [x] Ejecucion de comandos remotos via SSH
@@ -133,6 +149,7 @@ echo -ne "GET / HTTP/1.1\r\nHost: example.com\r\n\r\n" | bhp-netcat -t example.c
 - [x] Cliente UDP generico
 - [x] Servidor TCP multihilo generico
 - [x] Sustituto de Netcat (shell, upload, execute)
+- [x] Proxy TCP con hexdump
 - [ ] Sockets sin procesar / sniffer de red
 - [ ] Escaner de descubrimiento de hosts
 
