@@ -1,2 +1,6 @@
 paramiko>=3.0
 scapy>=2.5
+
+# Opcional, solo para bhp-face-detector:
+# opencv-python>=4.8
+# numpy>=1.24

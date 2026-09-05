@@ -193,6 +193,19 @@ descomprimiendo `gzip`/`deflate` si hace falta.
 bhp-recapper arper.pcap -o pictures -t image
 ```
 
+### `bhp-face-detector` — Deteccion facial en imagenes extraidas
+
+Ejecuta un clasificador Haar de OpenCV sobre un directorio de imagenes (por
+ejemplo, las extraidas con `bhp-recapper`) para determinar que imagenes
+contienen caras, dibujando un recuadro verde sobre cada una. Requiere las
+dependencias opcionales de `faces` (`pip install -e ".[faces]"`) y el
+archivo del clasificador:
+
+```bash
+wget http://eclecti.cc/files/2008/03/haarcascade_frontalface_alt.xml
+bhp-face-detector pictures -o faces -c haarcascade_frontalface_alt.xml
+```
+
 ## Roadmap
 
 - [x] Ejecucion de comandos remotos via SSH
@@ -208,6 +221,7 @@ bhp-recapper arper.pcap -o pictures -t image
 - [x] Sniffer de credenciales de correo con Scapy
 - [x] Envenenador ARP (MITM) con Scapy
 - [x] Extractor de contenido HTTP desde pcap
+- [x] Deteccion facial en imagenes extraidas
 
 ## Referencia
 
