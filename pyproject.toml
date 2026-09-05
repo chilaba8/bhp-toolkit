@@ -12,6 +12,7 @@ license = { text = "MIT" }
 dependencies = [
     "paramiko>=3.0",
     "scapy>=2.5",
+    "requests>=2.31",
 ]
 
 [project.optional-dependencies]
@@ -32,6 +33,7 @@ bhp-mail-sniffer = "bhp_toolkit.scapy_tools.mail_sniffer:main"
 bhp-arper = "bhp_toolkit.scapy_tools.arper:main"
 bhp-recapper = "bhp_toolkit.scapy_tools.recapper:main"
 bhp-face-detector = "bhp_toolkit.scapy_tools.detector:main"
+bhp-wp-mapper = "bhp_toolkit.web.wp_mapper:main"
 
 [tool.setuptools.packages.find]
 include = ["bhp_toolkit*"]
