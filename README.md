@@ -171,6 +171,17 @@ trafico de otra maquina de la LAN.
 sudo bhp-mail-sniffer -i eth0
 ```
 
+### `bhp-arper` — Envenenador ARP para ataques MITM
+
+Envenena la cache ARP de una victima y de la puerta de enlace para
+interponerse en su trafico (Man-In-The-Middle), lo captura en un archivo
+pcap y restaura las tablas ARP originales al terminar (por `Ctrl-C` o al
+alcanzar el numero de paquetes indicado).
+
+```bash
+sudo bhp-arper 192.168.1.193 192.168.1.254 eth0 -c 200 -o arper.pcap
+```
+
 ## Roadmap
 
 - [x] Ejecucion de comandos remotos via SSH
@@ -184,6 +195,7 @@ sudo bhp-mail-sniffer -i eth0
 - [x] Sockets sin procesar / sniffer de red
 - [x] Escaner de descubrimiento de hosts
 - [x] Sniffer de credenciales de correo con Scapy
+- [x] Envenenador ARP (MITM) con Scapy
 
 ## Referencia
 
