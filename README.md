@@ -206,6 +206,17 @@ wget http://eclecti.cc/files/2008/03/haarcascade_frontalface_alt.xml
 bhp-face-detector pictures -o faces -c haarcascade_frontalface_alt.xml
 ```
 
+### `bhp-wp-mapper` — Mapeador de aplicaciones web de codigo abierto
+
+Recorre una copia local de una aplicacion web de codigo abierto (p. ej. una
+instalacion de WordPress descargada) para construir un mapa de rutas de
+archivo, y comprueba con hilos cuales de esas rutas existen tambien en el
+objetivo remoto activo. Guarda las coincidencias en un archivo de texto.
+
+```bash
+bhp-wp-mapper ~/Descargas/wordpress http://objetivo.com/wordpress -o myanswers.txt
+```
+
 ## Roadmap
 
 - [x] Ejecucion de comandos remotos via SSH
@@ -222,6 +233,7 @@ bhp-face-detector pictures -o faces -c haarcascade_frontalface_alt.xml
 - [x] Envenenador ARP (MITM) con Scapy
 - [x] Extractor de contenido HTTP desde pcap
 - [x] Deteccion facial en imagenes extraidas
+- [x] Mapeador de aplicaciones web de codigo abierto
 
 ## Referencia
 
