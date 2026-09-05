@@ -255,6 +255,14 @@ carga util original insertando al azar un intento de inyeccion SQL, un
 intento de XSS o repitiendo un fragmento aleatorio de la propia carga
 util.
 
+### `bhp_bing.py` — Descubrimiento de hosts via API de Bing
+
+Menu contextual **Send to Bing** sobre cualquier peticion HTTP: consulta
+la API de Bing Web Search por IP (otros virtual hosts en el mismo
+servidor) y por dominio (subdominios indexados), y anade automaticamente
+al ambito objetivo de Burp cualquier sitio nuevo que encuentre. Requiere
+una clave gratuita de la API de Bing Web Search.
+
 ## Roadmap
 
 - [x] Ejecucion de comandos remotos via SSH
@@ -275,7 +283,7 @@ util.
 - [x] Forzador de directorios y archivos
 - [x] Forzador de autenticacion por formulario HTML
 - [x] Extension Burp: fuzzer de mutacion para Intruder
-- [ ] Extension Burp: descubrimiento de subdominios/hosts via API de Bing
+- [x] Extension Burp: descubrimiento de subdominios/hosts via API de Bing
 - [ ] Extension Burp: generador de listas de contrasenas desde contenido rastreado
 
 Las extensiones de Burp del capitulo 6 son *plugins* Jython que se cargan
