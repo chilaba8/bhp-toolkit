@@ -229,6 +229,19 @@ objetivo.
 bhp-dir-bruter http://objetivo.com /usr/share/wordlists/dirb/common.txt -t 20
 ```
 
+### `bhp-form-bruter` — Forzador de autenticacion por formulario HTML
+
+Extrae automaticamente los campos de un formulario de login (incluidos
+tokens ocultos y cookies anti-CSRF, gestionadas via `requests.Session`) y
+prueba contrasenas de una lista contra el. Los nombres de campo por
+defecto (`log`/`pwd`) corresponden al formulario de WordPress; ajustalos
+con `-U`/`-P` para otros CMS o formularios personalizados.
+
+```bash
+bhp-form-bruter http://objetivo.com/wp-login.php admin /usr/share/seclists/Passwords/Software/cain-and-abel.txt \
+    -s "Welcome to WordPress!" -t 5 -d 2
+```
+
 ## Roadmap
 
 - [x] Ejecucion de comandos remotos via SSH
@@ -247,6 +260,7 @@ bhp-dir-bruter http://objetivo.com /usr/share/wordlists/dirb/common.txt -t 20
 - [x] Deteccion facial en imagenes extraidas
 - [x] Mapeador de aplicaciones web de codigo abierto
 - [x] Forzador de directorios y archivos
+- [x] Forzador de autenticacion por formulario HTML
 
 ## Referencia
 

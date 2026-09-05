@@ -1,6 +1,7 @@
 paramiko>=3.0
 scapy>=2.5
 requests>=2.31
+lxml>=5.0
 
 # Opcional, solo para bhp-face-detector:
 # opencv-python>=4.8
