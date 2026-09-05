@@ -26,6 +26,7 @@ bhp-tcp-proxy = "bhp_toolkit.net.tcp_proxy:main"
 bhp-sniffer = "bhp_toolkit.raw.sniffer:main"
 bhp-host-discovery = "bhp_toolkit.raw.host_discovery:main"
 bhp-mail-sniffer = "bhp_toolkit.scapy_tools.mail_sniffer:main"
+bhp-arper = "bhp_toolkit.scapy_tools.arper:main"
 
 [tool.setuptools.packages.find]
 include = ["bhp_toolkit*"]
