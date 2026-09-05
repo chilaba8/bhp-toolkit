@@ -261,6 +261,15 @@ bhp-form-bruter http://objetivo.com/wp-login.php admin /usr/share/seclists/Passw
 - [x] Mapeador de aplicaciones web de codigo abierto
 - [x] Forzador de directorios y archivos
 - [x] Forzador de autenticacion por formulario HTML
+- [ ] Extension Burp: fuzzer de mutacion para Intruder
+- [ ] Extension Burp: descubrimiento de subdominios/hosts via API de Bing
+- [ ] Extension Burp: generador de listas de contrasenas desde contenido rastreado
+
+Las extensiones de Burp del capitulo 6 son *plugins* Jython que se cargan
+dentro de Burp Suite (API `burp.IBurpExtender` / `IIntruderPayloadGenerator`,
+sintaxis Python 2), no scripts CLI independientes. Vivirian en un directorio
+aparte (p. ej. `burp_extensions/`), fuera del empaquetado `pip install -e .`
+del resto del toolkit.
 
 ## Referencia
 
