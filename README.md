@@ -182,6 +182,17 @@ alcanzar el numero de paquetes indicado).
 sudo bhp-arper 192.168.1.193 192.168.1.254 eth0 -c 200 -o arper.pcap
 ```
 
+### `bhp-recapper` — Extractor de contenido HTTP desde un pcap
+
+Reconstruye las sesiones TCP de un archivo pcap (por ejemplo, el generado
+por `bhp-arper`) y extrae el contenido de las respuestas HTTP cuyo
+`Content-Type` coincida con el tipo indicado (por defecto, imagenes),
+descomprimiendo `gzip`/`deflate` si hace falta.
+
+```bash
+bhp-recapper arper.pcap -o pictures -t image
+```
+
 ## Roadmap
 
 - [x] Ejecucion de comandos remotos via SSH
@@ -196,6 +207,7 @@ sudo bhp-arper 192.168.1.193 192.168.1.254 eth0 -c 200 -o arper.pcap
 - [x] Escaner de descubrimiento de hosts
 - [x] Sniffer de credenciales de correo con Scapy
 - [x] Envenenador ARP (MITM) con Scapy
+- [x] Extractor de contenido HTTP desde pcap
 
 ## Referencia
 
