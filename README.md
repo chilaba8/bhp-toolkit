@@ -263,6 +263,15 @@ servidor) y por dominio (subdominios indexados), y anade automaticamente
 al ambito objetivo de Burp cualquier sitio nuevo que encuentre. Requiere
 una clave gratuita de la API de Bing Web Search.
 
+### `bhp_wordlist.py` — Generador de listas de contrasenas desde el sitio
+
+Menu contextual **Create Wordlist** sobre el trafico HTTP capturado:
+extrae las palabras del texto visible de las respuestas (incluidos los
+comentarios HTML) y genera con ellas una lista de contrasenas especifica
+del sitio, con variantes al estilo John the Ripper (capitalizada, con
+sufijos comunes y el ano actual). Combinala con un analisis pasivo en vivo
+de Burp para cubrir todo el sitio antes de generar la lista.
+
 ## Roadmap
 
 - [x] Ejecucion de comandos remotos via SSH
@@ -284,13 +293,7 @@ una clave gratuita de la API de Bing Web Search.
 - [x] Forzador de autenticacion por formulario HTML
 - [x] Extension Burp: fuzzer de mutacion para Intruder
 - [x] Extension Burp: descubrimiento de subdominios/hosts via API de Bing
-- [ ] Extension Burp: generador de listas de contrasenas desde contenido rastreado
-
-Las extensiones de Burp del capitulo 6 son *plugins* Jython que se cargan
-dentro de Burp Suite (API `burp.IBurpExtender` / `IIntruderPayloadGenerator`,
-sintaxis Python 2), no scripts CLI independientes. Vivirian en un directorio
-aparte (p. ej. `burp_extensions/`), fuera del empaquetado `pip install -e .`
-del resto del toolkit.
+- [x] Extension Burp: generador de listas de contrasenas desde contenido rastreado
 
 ## Referencia
 
