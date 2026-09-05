@@ -34,6 +34,7 @@ bhp-arper = "bhp_toolkit.scapy_tools.arper:main"
 bhp-recapper = "bhp_toolkit.scapy_tools.recapper:main"
 bhp-face-detector = "bhp_toolkit.scapy_tools.detector:main"
 bhp-wp-mapper = "bhp_toolkit.web.wp_mapper:main"
+bhp-dir-bruter = "bhp_toolkit.web.dir_bruter:main"
 
 [tool.setuptools.packages.find]
 include = ["bhp_toolkit*"]

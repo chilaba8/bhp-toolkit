@@ -217,6 +217,18 @@ objetivo remoto activo. Guarda las coincidencias en un archivo de texto.
 bhp-wp-mapper ~/Descargas/wordpress http://objetivo.com/wordpress -o myanswers.txt
 ```
 
+### `bhp-dir-bruter` — Forzador de directorios y archivos
+
+Cuando no conoces la estructura interna del objetivo (aplicacion
+personalizada, sin codigo fuente disponible), prueba por fuerza bruta una
+lista de palabras -junto con variantes de directorio y extension de
+archivo comunes (`.php`, `.bak`, `.orig`, `.inc`)- contra el sitio web
+objetivo.
+
+```bash
+bhp-dir-bruter http://objetivo.com /usr/share/wordlists/dirb/common.txt -t 20
+```
+
 ## Roadmap
 
 - [x] Ejecucion de comandos remotos via SSH
@@ -234,6 +246,7 @@ bhp-wp-mapper ~/Descargas/wordpress http://objetivo.com/wordpress -o myanswers.t
 - [x] Extractor de contenido HTTP desde pcap
 - [x] Deteccion facial en imagenes extraidas
 - [x] Mapeador de aplicaciones web de codigo abierto
+- [x] Forzador de directorios y archivos
 
 ## Referencia
 
