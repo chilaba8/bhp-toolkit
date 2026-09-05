@@ -242,6 +242,19 @@ bhp-form-bruter http://objetivo.com/wp-login.php admin /usr/share/seclists/Passw
     -s "Welcome to WordPress!" -t 5 -d 2
 ```
 
+## Extensiones de Burp Suite
+
+A partir de aqui, las herramientas no son scripts CLI instalables con pip,
+sino extensiones Jython que se cargan dentro de Burp Suite. Detalles de
+instalacion y uso en [`burp_extensions/README.md`](burp_extensions/README.md).
+
+### `bhp_fuzzer.py` — Fuzzer de mutacion para Intruder
+
+Generador de cargas utiles personalizado para Burp Intruder: muta la
+carga util original insertando al azar un intento de inyeccion SQL, un
+intento de XSS o repitiendo un fragmento aleatorio de la propia carga
+util.
+
 ## Roadmap
 
 - [x] Ejecucion de comandos remotos via SSH
@@ -261,7 +274,7 @@ bhp-form-bruter http://objetivo.com/wp-login.php admin /usr/share/seclists/Passw
 - [x] Mapeador de aplicaciones web de codigo abierto
 - [x] Forzador de directorios y archivos
 - [x] Forzador de autenticacion por formulario HTML
-- [ ] Extension Burp: fuzzer de mutacion para Intruder
+- [x] Extension Burp: fuzzer de mutacion para Intruder
 - [ ] Extension Burp: descubrimiento de subdominios/hosts via API de Bing
 - [ ] Extension Burp: generador de listas de contrasenas desde contenido rastreado
 
