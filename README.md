@@ -160,6 +160,17 @@ requiere privilegios de root.
 sudo bhp-host-discovery 192.168.1.0/24
 ```
 
+### `bhp-mail-sniffer` — Sniffer de credenciales de correo electronico
+
+Sniffer basado en Scapy que intercepta trafico SMTP/POP3/IMAP en texto plano y
+muestra los paquetes cuyo contenido incluye palabras clave de login (`user`,
+`pass`, `login`, `pwd`). Combinalo con `bhp-arper` para interceptar el
+trafico de otra maquina de la LAN.
+
+```bash
+sudo bhp-mail-sniffer -i eth0
+```
+
 ## Roadmap
 
 - [x] Ejecucion de comandos remotos via SSH
@@ -172,6 +183,7 @@ sudo bhp-host-discovery 192.168.1.0/24
 - [x] Proxy TCP con hexdump
 - [x] Sockets sin procesar / sniffer de red
 - [x] Escaner de descubrimiento de hosts
+- [x] Sniffer de credenciales de correo con Scapy
 
 ## Referencia
 
