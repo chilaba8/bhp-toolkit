@@ -14,6 +14,9 @@ dependencies = [
     "scapy>=2.5",
 ]
 
+[project.optional-dependencies]
+faces = ["opencv-python>=4.8", "numpy>=1.24"]
+
 [project.scripts]
 bhp-ssh-exec = "bhp_toolkit.ssh.exec_client:main"
 bhp-ssh-forward = "bhp_toolkit.ssh.forward:main"
@@ -28,6 +31,7 @@ bhp-host-discovery = "bhp_toolkit.raw.host_discovery:main"
 bhp-mail-sniffer = "bhp_toolkit.scapy_tools.mail_sniffer:main"
 bhp-arper = "bhp_toolkit.scapy_tools.arper:main"
 bhp-recapper = "bhp_toolkit.scapy_tools.recapper:main"
+bhp-face-detector = "bhp_toolkit.scapy_tools.detector:main"
 
 [tool.setuptools.packages.find]
 include = ["bhp_toolkit*"]
