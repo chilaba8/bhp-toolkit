@@ -1,0 +1,7 @@
+# Salida de los modulos (artefactos de ejecucion, no versionar).
+*.bmp
+screenshot.bmp
+
+# Shellcode generado / descargado.
+shellcode.raw
+shellcode.bin
