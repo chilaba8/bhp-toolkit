@@ -1,0 +1,5 @@
+# NUNCA subir el token de acceso personal de GitHub al repositorio.
+mytoken.txt
+
+# Datos exfiltrados por el troyano (salida local de prueba).
+data/*/
